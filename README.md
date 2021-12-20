@@ -1,2 +1,2 @@
 # basketballGameRecord
-Basketball game recorder is a React APP to record all inside a basketball game
+Basketball game recorder is a web APP that record all inside a basketball game
