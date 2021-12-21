@@ -1,34 +1,35 @@
 {
-  "name": "basketballgamerecorder",
-  "version": "1.0.0",
-  "description": "Basketball game recorder is a React APP to record all inside a basketball game",
-  "author": "terradasmarc",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/marcterradas/basketballGameRecorder.git"
-  },
-  "bugs": {
-    "url": "https://github.com/marcterradas/basketballGameRecorder/issues"
-  },
-  "homepage": "https://github.com/marcterradas/basketballGameRecorder#readme",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "devDependencies": {
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
-    "@vitejs/plugin-react": "^1.0.7",
-    "autoprefixer": "^10.4.0",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.7",
-    "typescript": "^4.4.4",
-    "vite": "^2.7.2"
-  }
+    "name": "basketballgamerecorder",
+    "version": "1.0.0",
+    "description": "Basketball game recorder is a React APP to record all inside a basketball game",
+    "author": "terradasmarc",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/marcterradas/basketballGameRecorder.git"
+    },
+    "bugs": {
+        "url": "https://github.com/marcterradas/basketballGameRecorder/issues"
+    },
+    "homepage": "https://github.com/marcterradas/basketballGameRecorder#readme",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "devDependencies": {
+        "@types/react": "^17.0.33",
+        "@types/react-dom": "^17.0.10",
+        "@vitejs/plugin-react": "^1.0.7",
+        "autoprefixer": "^10.4.0",
+        "postcss": "^8.4.5",
+        "prettier": "2.5.1",
+        "tailwindcss": "^3.0.7",
+        "typescript": "^4.4.4",
+        "vite": "^2.7.2"
+    }
 }
