@@ -1,0 +1,20 @@
+{
+    "resources": {
+        "en": {
+            "translation": {
+                "language": "English"
+            }
+        },
+        "es": {
+            "translation": {
+                "language": "Castellano"
+            }
+        },
+        "cat": {
+            "translation": {
+                "language": "Català"
+            }
+        }
+    },
+    "fallbackLng": "en"
+}
