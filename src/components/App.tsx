@@ -1,10 +1,11 @@
-import { useTranslation } from 'react-i18next'
+// import { useTranslation } from 'react-i18next'
+import Nav from './Nav'
 
 function App() {
-    const { t } = useTranslation()
+    // const { t } = useTranslation()
     return (
-        <div className="App">
-            <h1>{t('language')}</h1>
+        <div className="app">
+            <Nav></Nav>
         </div>
     )
 }
