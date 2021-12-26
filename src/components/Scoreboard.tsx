@@ -7,13 +7,13 @@ function Scoreboard() {
     const localTeam: TeamInterface = {
         type: 'local',
         name: 'Team A',
-        logo: ''
+        logo: '../images/lakers.svg'
     }
 
     const guestTeam: TeamInterface = {
         type: 'guest',
         name: 'Team B',
-        logo: ''
+        logo: '../images/celtics.svg'
     }
 
     return (
