@@ -1,11 +1,9 @@
-// import { useTranslation } from 'react-i18next'
-import Nav from './Nav'
+import Scoreboard from './Scoreboard'
 
 function App() {
-    // const { t } = useTranslation()
     return (
         <div className="app">
-            <Nav></Nav>
+            <Scoreboard></Scoreboard>
         </div>
     )
 }
