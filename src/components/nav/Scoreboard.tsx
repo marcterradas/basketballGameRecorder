@@ -17,7 +17,7 @@ function Scoreboard() {
     }
 
     return (
-        <div className="border-2 border-rose-600">
+        <div className="border-2 border-rose-600 flex items-center justify-between">
             <Team {...localTeam}></Team>
             <Timer></Timer>
             <Team {...guestTeam}></Team>
