@@ -1,19 +1,19 @@
 import Team from './Team'
 import Timer from './Timer'
 
-import { Team as TeamInterface } from '../interfaces'
+import { Team as TeamInterface } from '../../interfaces'
 
 function Scoreboard() {
     const localTeam: TeamInterface = {
         type: 'local',
         name: 'Team A',
-        logo: '../images/lakers.svg'
+        logo: 'lakers.svg'
     }
 
     const guestTeam: TeamInterface = {
         type: 'guest',
         name: 'Team B',
-        logo: '../images/celtics.svg'
+        logo: 'celtics.svg'
     }
 
     return (

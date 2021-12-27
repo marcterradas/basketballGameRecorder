@@ -1,4 +1,4 @@
-import Scoreboard from './Scoreboard'
+import Scoreboard from './nav/Scoreboard'
 
 function App() {
     return (
