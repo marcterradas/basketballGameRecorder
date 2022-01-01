@@ -9,7 +9,7 @@ function Team(props: TeamInterface) {
     return (
         <div>
             <div className="h-40 w-40 bg-contain bg-no-repeat bg-center border-2 border-rose-600" style={styles}></div>
-            <div className="name">{props.name}</div>
+            <div className="name text-center">{props.name}</div>
         </div>
     )
 }
