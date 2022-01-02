@@ -2,17 +2,23 @@
     "resources": {
         "en": {
             "translation": {
-                "language": "English"
+                "language": "English",
+                "bonus": "Bonus",
+                "possession": "Possession"
             }
         },
         "es": {
             "translation": {
-                "language": "Castellano"
+                "language": "Castellano",
+                "bonus": "Bonus",
+                "possession": "Posesión"
             }
         },
         "cat": {
             "translation": {
-                "language": "Català"
+                "language": "Català",
+                "bonus": "Bonus",
+                "possession": "Possessió"
             }
         }
     },
