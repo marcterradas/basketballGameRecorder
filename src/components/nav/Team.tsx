@@ -2,13 +2,14 @@ import { Team as TeamInterface } from '../../interfaces'
 
 function Team(props: TeamInterface) {
     const logo: string = `/src/images/${props.logo}`
-    const styles = {
+    const logoStyles: object = {
         backgroundImage: `url('${logo}')`
     }
+    const containerFlexDirection: string = props.type == 'guest' ? 'flex-row-reverse' : ''
     return (
-        <div className="border-2 border-rose-600 flex">
+        <div className={'flex ' + containerFlexDirection}>
             <div>
-                <div className="h-40 w-40 bg-contain bg-no-repeat bg-center" style={styles}></div>
+                <div className="h-40 w-40 bg-contain bg-no-repeat bg-center" style={logoStyles}></div>
                 <div className="text-center">{props.name}</div>
             </div>
             <div>score ...</div>
