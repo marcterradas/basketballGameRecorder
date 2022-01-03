@@ -4,21 +4,24 @@
             "translation": {
                 "language": "English",
                 "bonus": "Bonus",
-                "possession": "Possession"
+                "possession": "Possession",
+                "fouls": "Fouls"
             }
         },
         "es": {
             "translation": {
                 "language": "Castellano",
                 "bonus": "Bonus",
-                "possession": "Posesión"
+                "possession": "Posesión",
+                "fouls": "Faltas"
             }
         },
         "cat": {
             "translation": {
                 "language": "Català",
                 "bonus": "Bonus",
-                "possession": "Possessió"
+                "possession": "Possessió",
+                "fouls": "Faltas"
             }
         }
     },
