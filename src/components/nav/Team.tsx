@@ -19,9 +19,18 @@ function Team(props: TeamInterface) {
             </div>
             <div className="bold h-40 w-40 flex items-center justify-center text-center">{score}</div>
             <div className="flex flex-wrap items-center justify-center">
-                <div className="w-full">{t('bonus')}</div>
-                <div className="w-full">{t('possession')}</div>
-                <div className="w-full">{t('fouls')}</div>
+                <div className="w-full flex">
+                    <div className="h-4 w-4 border-2 rounded-full border-rose-600"></div>
+                    <div>{t('bonus')}</div>
+                </div>
+                <div className="w-full flex">
+                    <div className="h-4 w-4 border-2 rounded-full border-rose-600"></div>
+                    <div>{t('possession')}</div>
+                </div>
+                <div className="w-full flex">
+                    <div className="h-4 w-4 border-2 rounded-full border-rose-600"></div>
+                    <div>{t('fouls')}</div>
+                </div>
             </div>
         </div>
     )
