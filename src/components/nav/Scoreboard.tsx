@@ -3,7 +3,7 @@ import Timer from './Timer'
 
 import { Team as TeamInterface } from '../../interfaces'
 
-function Scoreboard() {
+function Scoreboard(): JSX.Element {
     const localTeam: TeamInterface = {
         type: 'local',
         name: 'Team A',
