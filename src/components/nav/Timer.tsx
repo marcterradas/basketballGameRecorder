@@ -8,9 +8,9 @@ function Timer(): JSX.Element {
 
     return (
         <div className="w-full">
-            <div className="bold w-full text-center">{timer}</div>
+            <div className="bold w-full text-center text-8xl pb-4">{timer}</div>
             <div className="w-full text-center">
-                <div className="bold">{period}</div>
+                <div className="bold text-4xl">{period}</div>
                 <div>{t('period')}</div>
             </div>
         </div>
