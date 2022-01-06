@@ -1,5 +1,12 @@
 function Timer() {
-    return <div>timer</div>
+    const timer: string = '10:00'
+
+    return (
+        <div>
+            <div className="bold">{timer}</div>
+            <div></div>
+        </div>
+    )
 }
 
 export default Timer
