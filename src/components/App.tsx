@@ -1,6 +1,6 @@
 import Scoreboard from './nav/Scoreboard'
 
-function App() {
+function App(): JSX.Element {
     return (
         <div className="app">
             <Scoreboard></Scoreboard>
