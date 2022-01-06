@@ -24,21 +24,21 @@ function Team(props: TeamInterface): JSX.Element {
         <div className={'flex ' + containerFlexDirection}>
             <div>
                 <div className="h-40 w-40 bg-contain bg-no-repeat bg-center" style={logoStyles}></div>
-                <div className="text-center">{props.name}</div>
+                <div className="text-center select-none">{props.name}</div>
             </div>
-            <div className="bold h-40 w-60 flex items-center justify-center text-center text-6xl">{score}</div>
+            <div className="bold h-40 w-60 flex items-center justify-center text-center text-6xl select-none">{score}</div>
             <div className="flex flex-wrap items-center justify-center">
                 <div className="w-full flex items-center">
-                    <div className={`h-4 w-4 border-2 rounded-full border-black mr-1 ${bonusClass}`}></div>
-                    <div>{t('bonus')}</div>
+                    <div className={`h-4 w-4 border-2 rounded-full border-black mr-1 ${bonusClass} select-none`}></div>
+                    <div className="select-none">{t('bonus')}</div>
                 </div>
                 <div className="w-full flex items-center">
-                    <div className={`h-4 w-4 border-2 rounded-full border-black mr-1 ${possessionClass}`}></div>
-                    <div>{t('possession')}</div>
+                    <div className={`h-4 w-4 border-2 rounded-full border-black mr-1 ${possessionClass} select-none`}></div>
+                    <div className="select-none">{t('possession')}</div>
                 </div>
                 <div className="w-full flex items-center">
-                    <div className={`h-4 w-4 border-2 rounded-full border-black mr-1 ${foulsClass}`}></div>
-                    <div>{t('fouls')}</div>
+                    <div className={`h-4 w-4 border-2 rounded-full border-black mr-1 ${foulsClass} select-none`}></div>
+                    <div className="select-none">{t('fouls')}</div>
                 </div>
             </div>
         </div>
