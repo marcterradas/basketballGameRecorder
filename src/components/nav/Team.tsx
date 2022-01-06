@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next'
 
 import { Team as TeamInterface } from '../../interfaces'
 
-function Team(props: TeamInterface) {
+function Team(props: TeamInterface): JSX.Element {
     const logo: string = `/src/images/${props.logo}`
     const logoStyles: object = {
         backgroundImage: `url('${logo}')`
@@ -11,7 +11,7 @@ function Team(props: TeamInterface) {
 
     const containerFlexDirection: string = props.type == 'guest' ? 'flex-row-reverse' : ''
 
-    const score: string = '22'
+    const score: string = '00'
     const bonus: boolean = false
     const possession: boolean = false
     const fouls: boolean = false
