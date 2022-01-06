@@ -5,7 +5,8 @@
                 "language": "English",
                 "bonus": "Bonus",
                 "possession": "Possession",
-                "fouls": "Fouls"
+                "fouls": "Fouls",
+                "period": "Period"
             }
         },
         "es": {
@@ -13,7 +14,8 @@
                 "language": "Castellano",
                 "bonus": "Bonus",
                 "possession": "Posesión",
-                "fouls": "Faltas"
+                "fouls": "Faltas",
+                "period": "Periodo"
             }
         },
         "cat": {
@@ -21,7 +23,8 @@
                 "language": "Català",
                 "bonus": "Bonus",
                 "possession": "Possessió",
-                "fouls": "Faltas"
+                "fouls": "Faltas",
+                "period": "Període"
             }
         }
     },

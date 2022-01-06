@@ -11,7 +11,7 @@ function Timer(): JSX.Element {
             <div className="bold w-full text-center">{timer}</div>
             <div className="w-full text-center">
                 <div className="bold">{period}</div>
-                <div></div>
+                <div>{t('period')}</div>
             </div>
         </div>
     )
