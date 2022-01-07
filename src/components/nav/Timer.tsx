@@ -12,7 +12,7 @@ function Timer(): JSX.Element {
         setStart(!start)
     }
 
-    const updateTimer = () => {
+    const updateTimer = (): (() => void) | undefined => {
         if (!start && counter > 0) {
             const timer: number = setInterval(() => setCounter(counter - 1), 1000)
             return (): void => clearInterval(timer)
