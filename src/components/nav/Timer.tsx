@@ -15,16 +15,17 @@ function Timer(): JSX.Element {
     }
 
     const updateTime = (): void => {
+        setSeconds(seconds == 0 ? 59 : seconds - 1)
+
         if (seconds == 0) {
-            setSeconds(59)
             setMinutes(minutes - 1)
-        } else {
-            setSeconds(seconds - 1)
         }
 
-        if (minutes == 0) {
+        if (minutes == 0 && seconds == 0) {
             setStart(true)
             setPeriod(period + 1)
+            setMinutes(10)
+            setSeconds(0)
         }
 
         const minutesStr: string = minutes.toString().padStart(2, '0')
@@ -34,7 +35,7 @@ function Timer(): JSX.Element {
     }
 
     const updateTimer = (): (() => void) | void => {
-        if (!start && minutes > 0) {
+        if (!start) {
             // every second, update time
             const interval: number = setInterval(updateTime, 1000)
             return (): void => clearInterval(interval)
