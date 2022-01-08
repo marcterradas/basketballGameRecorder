@@ -5,7 +5,9 @@ function Timer(): JSX.Element {
     const { t } = useTranslation()
 
     const [start, setStart] = useState(true)
-    const [time, setTime] = useState(10)
+    const [minutes, setMinutes] = useState(10)
+    const [seconds, setSeconds] = useState(0)
+    const [time, setTime] = useState('10:00')
     const [period, setPeriod] = useState(1)
 
     const clickTimer = (): void => {
@@ -13,18 +15,33 @@ function Timer(): JSX.Element {
     }
 
     const updateTime = (): void => {
-        setTime(time - 1)
+        if (seconds == 0) {
+            setSeconds(59)
+            setMinutes(minutes - 1)
+        } else {
+            setSeconds(seconds - 1)
+        }
+
+        if (minutes == 0) {
+            setStart(true)
+            setPeriod(period + 1)
+        }
+
+        const minutesStr: string = minutes.toString().padStart(2, '0')
+        const secondsStr: string = seconds.toString().padStart(2, '0')
+
+        setTime(`${minutesStr}:${secondsStr}`)
     }
 
     const updateTimer = (): (() => void) | void => {
-        if (!start && time > 0) {
+        if (!start && minutes > 0) {
             // every second, update time
             const interval: number = setInterval(updateTime, 1000)
             return (): void => clearInterval(interval)
         }
     }
 
-    useEffect(updateTimer, [start, time])
+    useEffect(updateTimer, [start, minutes, seconds])
 
     return (
         <div className="w-full">
