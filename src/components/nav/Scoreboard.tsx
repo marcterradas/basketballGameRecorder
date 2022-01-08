@@ -17,7 +17,7 @@ function Scoreboard(): JSX.Element {
     }
 
     return (
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between shadow-md pb-2">
             <Team {...localTeam}></Team>
             <Timer></Timer>
             <Team {...guestTeam}></Team>
