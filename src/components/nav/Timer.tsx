@@ -14,8 +14,9 @@ function Timer(): JSX.Element {
 
     const clickTimer = (): void => {
         const isStart: boolean = !start
+        const label: string = minutes < 10 ? t('pause') : t('start')
         setStart(isStart)
-        setLabel(isStart ? t('start') : time)
+        setLabel(isStart ? label : time)
     }
 
     const updateTime = (): void => {
