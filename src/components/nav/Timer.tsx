@@ -9,9 +9,12 @@ function Timer(): JSX.Element {
     const [seconds, setSeconds] = useState(0)
     const [time, setTime] = useState('10:00')
     const [period, setPeriod] = useState(1)
+    const [label, setLabel] = useState(t('start'))
 
     const clickTimer = (): void => {
-        setStart(!start)
+        const isStart: boolean = !start
+        setStart(isStart)
+        setLabel(isStart ? t('start') : time)
     }
 
     const updateTime = (): void => {
@@ -26,12 +29,15 @@ function Timer(): JSX.Element {
             setPeriod(period + 1)
             setMinutes(10)
             setSeconds(0)
+            setLabel(t('start'))
         }
 
         const minutesStr: string = minutes.toString().padStart(2, '0')
         const secondsStr: string = seconds.toString().padStart(2, '0')
+        const timeStr: string = `${minutesStr}:${secondsStr}`
 
-        setTime(`${minutesStr}:${secondsStr}`)
+        setTime(timeStr)
+        setLabel(timeStr)
     }
 
     const updateTimer = (): (() => void) | void => {
@@ -47,7 +53,7 @@ function Timer(): JSX.Element {
     return (
         <div className="w-full">
             <div className="bold w-full text-center text-8xl pb-4 cursor-pointer select-none" onClick={clickTimer}>
-                {start ? t('start') : time}
+                {label}
             </div>
             <div className="w-full text-center">
                 <div className="bold text-4xl select-none">{period}</div>
