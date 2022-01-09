@@ -3,13 +3,14 @@ import { useTranslation } from 'react-i18next'
 
 function Timer(): JSX.Element {
     const { t } = useTranslation()
+    const startLabel: string = t('start')
 
     const [start, setStart] = useState(true)
     const [minutes, setMinutes] = useState(10)
     const [seconds, setSeconds] = useState(0)
     const [time, setTime] = useState('10:00')
     const [period, setPeriod] = useState(1)
-    const [label, setLabel] = useState(t('start'))
+    const [label, setLabel] = useState(startLabel)
 
     const clickTimer = (): void => {
         const isStart: boolean = !start
