@@ -7,7 +7,8 @@
                 "possession": "Possession",
                 "fouls": "Fouls",
                 "period": "Period",
-                "start": "Start"
+                "start": "Start",
+                "pause": "Pause"
             }
         },
         "es": {
@@ -17,7 +18,8 @@
                 "possession": "Posesión",
                 "fouls": "Faltas",
                 "period": "Periodo",
-                "start": "Empezar"
+                "start": "Empezar",
+                "pause": "Pausa"
             }
         },
         "cat": {
@@ -27,7 +29,8 @@
                 "possession": "Possessió",
                 "fouls": "Faltas",
                 "period": "Període",
-                "start": "Començar"
+                "start": "Començar",
+                "pause": "Pausa"
             }
         }
     },
