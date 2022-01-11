@@ -1,3 +1,13 @@
-import { createStore } from 'redux'
+import { Team as TeamInterface } from './interfaces'
 
-console.log('store ... ')
+export const localTeam: TeamInterface = {
+    type: 'local',
+    name: 'Team A',
+    logo: 'lakers.svg'
+}
+
+export const guestTeam: TeamInterface = {
+    type: 'guest',
+    name: 'Team B',
+    logo: 'celtics.svg'
+}
