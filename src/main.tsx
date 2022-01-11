@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
+import './store'
+
 import './languages/i18n'
 import './styles/index.css'
 
