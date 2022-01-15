@@ -23,10 +23,11 @@ export const guestTeam: TeamInterface = {
 }
 
 const initialScoreState = { score: 0 }
-const scoreReducer = (state = initialScoreState, action: string): object => {
+
+const scoreReducer = (state = initialScoreState, action) => {
     let result = {}
 
-    switch (action) {
+    switch (action.type) {
         case 'increase/one':
             result = {
                 ...state,
@@ -42,4 +43,7 @@ const scoreReducer = (state = initialScoreState, action: string): object => {
 }
 
 const store = configureStore({ reducer: scoreReducer })
+console.log(store.getState())
+
+store.dispatch({ type: 'increase/one' })
 console.log(store.getState())
