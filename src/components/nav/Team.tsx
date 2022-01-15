@@ -3,22 +3,15 @@ import { useTranslation } from 'react-i18next'
 import { Team as TeamInterface } from '../../interfaces'
 
 function Team(props: TeamInterface): JSX.Element {
-    const logo: string = `/src/images/${props.logo}`
-    const logoStyles: object = {
-        backgroundImage: `url('${logo}')`
-    }
     const { t } = useTranslation()
 
+    const logo: string = `/src/images/${props.logo}`
+    const logoStyles: object = { backgroundImage: `url('${logo}')` }
     const containerFlexDirection: string = props.type == 'guest' ? 'flex-row-reverse' : ''
-
-    const score: string = '00'
-    const bonus: boolean = false
-    const possession: boolean = false
-    const fouls: boolean = false
-
-    const bonusClass: string = bonus ? 'bg-green-600' : 'bg-red-600'
-    const possessionClass: string = possession ? 'bg-green-600' : 'bg-red-600'
-    const foulsClass: string = fouls ? 'bg-green-600' : 'bg-red-600'
+    const score: string = props.score.toString().padStart(2, '0')
+    const bonusClass: string = props.bonus ? 'bg-green-600' : 'bg-red-600'
+    const possessionClass: string = props.possession ? 'bg-green-600' : 'bg-red-600'
+    const foulsClass: string = props.fouls ? 'bg-green-600' : 'bg-red-600'
 
     return (
         <div className={'flex ' + containerFlexDirection}>
