@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import store from '../../store'
+
 function Timer(): JSX.Element {
     const { t } = useTranslation()
     const startLabel: string = t('start')
@@ -40,6 +42,7 @@ function Timer(): JSX.Element {
 
         setTime(timeStr)
         setLabel(timeStr)
+        store.dispatch({ type: 'updateTime', minutes: minutes, seconds: seconds })
     }
 
     const updateTimer = (): (() => void) | void => {

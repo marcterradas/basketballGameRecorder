@@ -25,17 +25,19 @@ export const guestTeam: TeamInterface = {
 const initialScoreState = {
     localTeam,
     guestTeam,
-    score: 0
+    minutes: 0,
+    seconds: 0
 }
 
 const scoreReducer = (state = initialScoreState, action) => {
     let result = {}
 
     switch (action.type) {
-        case 'increase/one':
+        case 'updateTime':
             result = {
                 ...state,
-                score: state.score + 1
+                minutes: action.minutes,
+                seconds: action.seconds
             }
             break
         default:
