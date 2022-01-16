@@ -22,7 +22,11 @@ export const guestTeam: TeamInterface = {
     fouls: false
 }
 
-const initialScoreState = { score: 0 }
+const initialScoreState = {
+    localTeam,
+    guestTeam,
+    score: 0
+}
 
 const scoreReducer = (state = initialScoreState, action) => {
     let result = {}
@@ -42,8 +46,4 @@ const scoreReducer = (state = initialScoreState, action) => {
     return result
 }
 
-const store = configureStore({ reducer: scoreReducer })
-console.log(store.getState())
-
-store.dispatch({ type: 'increase/one' })
-console.log(store.getState())
+export default configureStore({ reducer: scoreReducer })
