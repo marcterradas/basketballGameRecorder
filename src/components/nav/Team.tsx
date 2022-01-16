@@ -2,22 +2,22 @@ import { useTranslation } from 'react-i18next'
 
 import { Team as TeamInterface } from '../../interfaces'
 
-function Team(props: TeamInterface): JSX.Element {
+function Team(team: TeamInterface): JSX.Element {
     const { t } = useTranslation()
 
-    const logo: string = `/src/images/${props.logo}`
+    const logo: string = `/src/images/${team.logo}`
     const logoStyles: object = { backgroundImage: `url('${logo}')` }
-    const containerFlexDirection: string = props.type == 'guest' ? 'flex-row-reverse' : ''
-    const score: string = props.score.toString().padStart(2, '0')
-    const bonusClass: string = props.bonus ? 'bg-green-600' : 'bg-red-600'
-    const possessionClass: string = props.possession ? 'bg-green-600' : 'bg-red-600'
-    const foulsClass: string = props.fouls ? 'bg-green-600' : 'bg-red-600'
+    const containerFlexDirection: string = team.type == 'guest' ? 'flex-row-reverse' : ''
+    const score: string = team.score.toString().padStart(2, '0')
+    const bonusClass: string = team.bonus ? 'bg-green-600' : 'bg-red-600'
+    const possessionClass: string = team.possession ? 'bg-green-600' : 'bg-red-600'
+    const foulsClass: string = team.fouls ? 'bg-green-600' : 'bg-red-600'
 
     return (
         <div className={'flex ' + containerFlexDirection}>
             <div>
                 <div className="h-40 w-40 bg-contain bg-no-repeat bg-center" style={logoStyles}></div>
-                <div className="text-center select-none">{props.name}</div>
+                <div className="text-center select-none">{team.name}</div>
             </div>
             <div className="bold h-40 w-60 flex items-center justify-center text-center text-6xl select-none">{score}</div>
             <div className="flex flex-wrap items-center justify-center">
