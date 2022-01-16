@@ -6,11 +6,13 @@ export interface Team {
     bonus: boolean
     possession: boolean
     fouls: boolean
+    players: Array<Player>
 }
 
 export interface Player {
     name: string
     dorsal: number
+    points: number
     fouls: number
     technicalFouls: number
     injured: boolean
