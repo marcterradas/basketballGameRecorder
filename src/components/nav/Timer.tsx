@@ -29,11 +29,13 @@ function Timer(): JSX.Element {
         }
 
         if (minutes == 0 && seconds == 0) {
+            const newPeriod: number = period + 1
             setStart(true)
-            setPeriod(period + 1)
+            setPeriod(newPeriod)
             setMinutes(10)
             setSeconds(0)
             setLabel(t('start'))
+            store.dispatch({ type: 'updatePeriod', period: newPeriod })
         }
 
         const minutesStr: string = minutes.toString().padStart(2, '0')

@@ -27,7 +27,7 @@ const initialScoreState = {
     guestTeam,
     minutes: 0,
     seconds: 0,
-    period: 0
+    period: 1
 }
 
 const scoreReducer = (state = initialScoreState, action) => {
@@ -39,6 +39,12 @@ const scoreReducer = (state = initialScoreState, action) => {
                 ...state,
                 minutes: action.minutes,
                 seconds: action.seconds
+            }
+            break
+        case 'updatePeriod':
+            result = {
+                ...state,
+                period: action.period
             }
             break
         default:
