@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 
 import { Team as TeamInterface } from './interfaces'
 
-export const localTeam: TeamInterface = {
+const localTeam: TeamInterface = {
     type: 'local',
     name: 'Team A',
     logo: 'lakers.svg',
@@ -12,7 +12,7 @@ export const localTeam: TeamInterface = {
     fouls: false
 }
 
-export const guestTeam: TeamInterface = {
+const guestTeam: TeamInterface = {
     type: 'guest',
     name: 'Team B',
     logo: 'celtics.svg',
@@ -26,7 +26,8 @@ const initialScoreState = {
     localTeam,
     guestTeam,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
+    period: 0
 }
 
 const scoreReducer = (state = initialScoreState, action) => {
