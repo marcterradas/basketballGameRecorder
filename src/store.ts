@@ -53,7 +53,7 @@ const guestTeam: Team = {
 const initialScoreState = {
     localTeam,
     guestTeam,
-    minutes: 0,
+    minutes: 10,
     seconds: 0,
     period: 1
 }
