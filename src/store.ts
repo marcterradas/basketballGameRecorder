@@ -16,13 +16,13 @@ const localTeam: Team = {
         { name: 'Player3', dorsal: 3, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: true },
         { name: 'Player4', dorsal: 4, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: true },
         { name: 'Player5', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: true },
-        { name: 'Player6', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
-        { name: 'Player7', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
-        { name: 'Player8', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
-        { name: 'Player9', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
-        { name: 'Player10', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
-        { name: 'Player11', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
-        { name: 'Player12', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false }
+        { name: 'Player6', dorsal: 6, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
+        { name: 'Player7', dorsal: 7, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
+        { name: 'Player8', dorsal: 8, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
+        { name: 'Player9', dorsal: 9, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
+        { name: 'Player10', dorsal: 10, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
+        { name: 'Player11', dorsal: 11, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
+        { name: 'Player12', dorsal: 12, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false }
     ]
 }
 
@@ -40,13 +40,13 @@ const guestTeam: Team = {
         { name: 'Player3', dorsal: 3, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: true },
         { name: 'Player4', dorsal: 4, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: true },
         { name: 'Player5', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: true },
-        { name: 'Player6', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
-        { name: 'Player7', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
-        { name: 'Player8', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
-        { name: 'Player9', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
-        { name: 'Player10', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
-        { name: 'Player11', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
-        { name: 'Player12', dorsal: 5, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false }
+        { name: 'Player6', dorsal: 6, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
+        { name: 'Player7', dorsal: 7, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
+        { name: 'Player8', dorsal: 8, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
+        { name: 'Player9', dorsal: 9, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
+        { name: 'Player10', dorsal: 10, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
+        { name: 'Player11', dorsal: 11, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
+        { name: 'Player12', dorsal: 12, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false }
     ]
 }
 
