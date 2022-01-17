@@ -1,5 +1,5 @@
 function Historic(): JSX.Element {
-    return <div>Historic...</div>
+    return <div></div>
 }
 
 export default Historic
