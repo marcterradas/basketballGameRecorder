@@ -3,8 +3,20 @@ import { Team as TeamInterface, Player as PlayerInterface } from '../../interfac
 import Player from './Player'
 
 function Team(team: TeamInterface): JSX.Element {
-    const players: Array<JSX.Element> = team.players.map((player: PlayerInterface, index: number) => <Player {...player} key={index}></Player>)
+    const playingPlayers: Array<JSX.Element> = []
+    const benchPlayers: Array<JSX.Element> = []
 
-    return <div className=" grid grid-cols-4 gap-4 border-2 border-red-600">{players}</div>
+    for (let index in team.players) {
+        const player: PlayerInterface = team.players[index]
+        const playerElement: JSX.Element = <Player {...player} key={index}></Player>
+        player.inGame ? playingPlayers.push(playerElement) : benchPlayers.push(playerElement)
+    }
+
+    return (
+        <div>
+            <div className="grid grid-cols-4 gap-4">{playingPlayers}</div>
+            <div className="grid grid-cols-4 gap-4">{benchPlayers}</div>
+        </div>
+    )
 }
 export default Team
