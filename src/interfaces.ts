@@ -7,6 +7,7 @@ export interface Team {
     possession: boolean
     fouls: boolean
     players: Array<Player>
+    coach: Coach
 }
 
 export interface Player {
@@ -18,4 +19,10 @@ export interface Player {
     injured: boolean
     ejected: boolean
     inGame: boolean
+}
+
+export interface Coach {
+    name: string
+    technicalFouls: number
+    ejected: boolean
 }

@@ -23,7 +23,8 @@ const localTeam: Team = {
         { name: 'Player10', dorsal: 10, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
         { name: 'Player11', dorsal: 11, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
         { name: 'Player12', dorsal: 12, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false }
-    ]
+    ],
+    coach: { name: 'Coach', technicalFouls: 0, ejected: false }
 }
 
 const guestTeam: Team = {
@@ -47,7 +48,8 @@ const guestTeam: Team = {
         { name: 'Player10', dorsal: 10, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
         { name: 'Player11', dorsal: 11, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false },
         { name: 'Player12', dorsal: 12, points: 0, fouls: 0, technicalFouls: 0, injured: false, ejected: false, inGame: false }
-    ]
+    ],
+    coach: { name: 'Coach', technicalFouls: 0, ejected: false }
 }
 
 const initialScoreState = {
