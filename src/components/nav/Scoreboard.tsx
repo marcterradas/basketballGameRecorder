@@ -10,7 +10,7 @@ function Scoreboard(): JSX.Element {
     const guestTeam: TeamInterface = store.getState().guestTeam
 
     return (
-        <div className="flex items-center justify-between shadow-md pb-2">
+        <div className="w-full flex items-center justify-between shadow-md pb-2">
             <Team {...localTeam}></Team>
             <Timer></Timer>
             <Team {...guestTeam}></Team>
