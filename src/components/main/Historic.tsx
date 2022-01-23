@@ -1,5 +1,5 @@
 function Historic(): JSX.Element {
-    return <div></div>
+    return <div className="grow flex items-start justify-center">historic ...</div>
 }
 
 export default Historic
