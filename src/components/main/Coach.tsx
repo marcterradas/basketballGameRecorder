@@ -1,9 +1,15 @@
 import { Coach as CoachInteface } from '../../interfaces'
 
 function Coach(coach: CoachInteface): JSX.Element {
-    console.log(coach)
+    const openPopup = (): void => {
+        console.log('open popup ...')
+    }
 
-    return <div>Coach</div>
+    return (
+        <div className="h-24 w-24 rounded-full border-2 border-black flex items-center justify-center cursor-pointer" onClick={openPopup}>
+            {coach.name}
+        </div>
+    )
 }
 
 export default Coach
