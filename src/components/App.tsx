@@ -4,7 +4,7 @@ import Footer from './footer/Footer'
 
 function App(): JSX.Element {
     return (
-        <div className="flex flex-wrap border-2 border-rose-600">
+        <div className="flex flex-wrap min-h-full">
             <Scoreboard></Scoreboard>
             <Main></Main>
             <Footer></Footer>
