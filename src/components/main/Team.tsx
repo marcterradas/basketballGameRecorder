@@ -1,6 +1,7 @@
-import { Team as TeamInterface, Player as PlayerInterface } from '../../interfaces'
+import { Team as TeamInterface, Player as PlayerInterface, Coach as CoachInterface } from '../../interfaces'
 
 import Player from './Player'
+import Coach from './Coach'
 
 function Team(team: TeamInterface): JSX.Element {
     const playingPlayers: Array<JSX.Element> = []
@@ -16,6 +17,7 @@ function Team(team: TeamInterface): JSX.Element {
         <div>
             <div className="grid grid-cols-4 gap-4">{playingPlayers}</div>
             <div className="grid grid-cols-4 gap-4">{benchPlayers}</div>
+            <Coach {...team.coach}></Coach>
         </div>
     )
 }
