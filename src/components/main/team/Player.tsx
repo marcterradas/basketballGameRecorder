@@ -1,4 +1,4 @@
-import { Player as PlayerInterface } from '../../interfaces'
+import { Player as PlayerInterface } from '../../../interfaces'
 
 function Player(player: PlayerInterface): JSX.Element {
     const openPopup = (): void => {

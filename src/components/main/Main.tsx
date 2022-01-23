@@ -1,7 +1,7 @@
 import store from '../../store'
 
-import Team from './Team'
-import Historic from './Historic'
+import Team from './team/Team'
+import Historic from './historic/Historic'
 
 import { Team as TeamInterface } from '../../interfaces'
 

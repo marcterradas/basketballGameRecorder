@@ -1,4 +1,4 @@
-import { Coach as CoachInteface } from '../../interfaces'
+import { Coach as CoachInteface } from '../../../interfaces'
 
 function Coach(coach: CoachInteface): JSX.Element {
     const openPopup = (): void => {

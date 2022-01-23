@@ -1,4 +1,4 @@
-import { Team as TeamInterface, Player as PlayerInterface } from '../../interfaces'
+import { Team as TeamInterface, Player as PlayerInterface } from '../../../interfaces'
 
 import Player from './Player'
 import Coach from './Coach'
