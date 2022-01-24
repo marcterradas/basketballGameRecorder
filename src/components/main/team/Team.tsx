@@ -6,7 +6,7 @@ import Coach from './Coach'
 function Team(team: TeamInterface): JSX.Element {
     const playingPlayers: Array<JSX.Element> = []
     const bench: Array<JSX.Element> = []
-    const coach: JSX.Element = <Coach {...team.coach}></Coach>
+    const coach: JSX.Element = <Coach {...team.coach} key="{coach.name}"></Coach>
 
     for (let index in team.players) {
         const player: PlayerInterface = team.players[index]
