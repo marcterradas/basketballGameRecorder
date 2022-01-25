@@ -9,8 +9,8 @@ function Footer(): JSX.Element {
     const guestTeam: TeamInterface = store.getState().guestTeam
 
     return (
-        <div className="w-full flex items-center justify-center">
-            <Actions {...localTeam} ></Actions>
+        <div className="w-full flex items-center justify-between">
+            <Actions {...localTeam}></Actions>
             <Actions {...guestTeam}></Actions>
         </div>
     )
