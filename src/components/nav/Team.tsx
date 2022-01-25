@@ -14,7 +14,7 @@ function Team(team: TeamInterface): JSX.Element {
     const foulsClass: string = team.fouls ? 'bg-green-600' : 'bg-red-600'
 
     return (
-        <div className={'flex ' + containerFlexDirection}>
+        <div className={`flex ${containerFlexDirection}`}>
             <div>
                 <div className="h-40 w-40 bg-contain bg-no-repeat bg-center" style={logoStyles}></div>
                 <div className="text-center select-none">{team.name}</div>
