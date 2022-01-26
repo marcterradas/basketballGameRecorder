@@ -1,3 +1,6 @@
+import store from '../../store'
+
+
 import { useTranslation } from 'react-i18next'
 
 import { Team as TeamInterface } from '../../interfaces'
@@ -9,11 +12,11 @@ function Actions(team: TeamInterface): JSX.Element {
     const possessionMargin: string = team.type == 'guest' ? 'mr-10' : ''
 
     const switchBonusStatus = (): void => {
-        console.log('switch bonus status ...')
+        store.dispatch({ type: 'switchBonusStatus', team: team.type })
     }
 
     const switchPossessionStatus = (): void => {
-        console.log('switch possession status ...')
+        store.dispatch({ type: 'switchPossessionStatus', team: team.type })
     }
 
     return (

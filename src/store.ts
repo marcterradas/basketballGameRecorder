@@ -77,6 +77,12 @@ const scoreReducer = (state = initialScoreState, action) => {
                 period: action.period
             }
             break
+        case 'switchBonusStatus':
+                console.log(action)
+            break
+        case 'switchPossessionStatus':
+                console.log(action)
+            break
         default:
             result = state
             break
