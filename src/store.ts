@@ -62,6 +62,8 @@ const initialScoreState = {
 
 const scoreReducer = (state = initialScoreState, action) => {
     let result = {}
+    const localTeam: Team = { ...state.localTeam }
+    const guestTeam: Team = { ...state.guestTeam }
 
     switch (action.type) {
         case 'updateTime':
@@ -78,10 +80,20 @@ const scoreReducer = (state = initialScoreState, action) => {
             }
             break
         case 'switchBonusStatus':
-                console.log(action)
+            action.team == 'local' ? (localTeam.bonus = !localTeam.bonus) : (guestTeam.bonus = !guestTeam.bonus)
+            result = {
+                ...state,
+                localTeam: localTeam,
+                guestTeam: guestTeam
+            }
             break
         case 'switchPossessionStatus':
-                console.log(action)
+            action.team == 'local' ? (localTeam.possession = !localTeam.possession) : (guestTeam.possession = !guestTeam.possession)
+            result = {
+                ...state,
+                localTeam: localTeam,
+                guestTeam: guestTeam
+            }
             break
         default:
             result = state
