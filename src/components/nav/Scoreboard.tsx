@@ -1,4 +1,4 @@
-import store from '../../store'
+import store from '../../store/store'
 
 import Team from './Team'
 import Timer from './Timer'
@@ -6,8 +6,8 @@ import Timer from './Timer'
 import { Team as TeamInterface } from '../../interfaces'
 
 function Scoreboard(): JSX.Element {
-    const localTeam: TeamInterface = store.getState().localTeam
-    const guestTeam: TeamInterface = store.getState().guestTeam
+    const localTeam: TeamInterface = store.getState().team.localTeam
+    const guestTeam: TeamInterface = store.getState().team.guestTeam
 
     return (
         <div className="w-full flex items-center justify-between shadow-md pb-2">

@@ -1,4 +1,4 @@
-import store from '../../store'
+import store from '../../store/store'
 
 
 import { useTranslation } from 'react-i18next'
