@@ -1,17 +1,29 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import store from '../../store'
 import { Team as TeamInterface } from '../../interfaces'
 
-function Team(team: TeamInterface): JSX.Element {
+function Team(teamProps: TeamInterface): JSX.Element {
     const { t } = useTranslation()
 
+    let team: TeamInterface = { ...teamProps }
     const logo: string = `/src/images/${team.logo}`
     const logoStyles: object = { backgroundImage: `url('${logo}')` }
     const containerFlexDirection: string = team.type == 'guest' ? 'flex-row-reverse' : ''
-    const score: string = team.score.toString().padStart(2, '0')
-    const bonusClass: string = team.bonus ? 'bg-green-600' : 'bg-red-600'
-    const possessionClass: string = team.possession ? 'bg-green-600' : 'bg-red-600'
-    const foulsClass: string = team.fouls ? 'bg-green-600' : 'bg-red-600'
+
+    const [score,setScore] = useState(team.score.toString().padStart(2, '0'))
+    const [bonusClass,setBonusClass] = useState(team.bonus ? 'bg-green-600' : 'bg-red-600')
+    const [possessionClass,setPossessionClass] = useState(team.possession ? 'bg-green-600' : 'bg-red-600')
+    const [foulsClass,setFoulsClass] = useState(team.fouls ? 'bg-green-600' : 'bg-red-600')
+
+    const getTeam = (): void => {
+        team = team.type == 'local' ? store.getState().localTeam : store.getState().guestTeam
+        setBonusClass(team.bonus ? 'bg-green-600' : 'bg-red-600')
+        setPossessionClass(team.possession ? 'bg-green-600' : 'bg-red-600')
+    }
+
+    store.subscribe(getTeam)
 
     return (
         <div className={`flex ${containerFlexDirection}`}>
