@@ -19,8 +19,10 @@ function Team(teamProps: TeamInterface): JSX.Element {
 
     const getTeam = (): void => {
         team = team.type == 'local' ? store.getState().localTeam : store.getState().guestTeam
+        setScore(team.score.toString().padStart(2, '0'))
         setBonusClass(team.bonus ? 'bg-green-600' : 'bg-red-600')
         setPossessionClass(team.possession ? 'bg-green-600' : 'bg-red-600')
+        setFoulsClass(team.fouls ? 'bg-green-600' : 'bg-red-600')
     }
 
     store.subscribe(getTeam)
