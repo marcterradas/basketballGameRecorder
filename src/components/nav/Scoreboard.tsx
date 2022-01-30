@@ -6,13 +6,8 @@ import Timer from './Timer'
 import { Team as TeamInterface } from '../../interfaces'
 
 function Scoreboard(): JSX.Element {
-    let localTeam: TeamInterface = store.getState().localTeam
-    let guestTeam: TeamInterface = store.getState().guestTeam
-
-    store.subscribe(() => {
-        localTeam = store.getState().localTeam
-        guestTeam = store.getState().guestTeam
-    })
+    const localTeam: TeamInterface = store.getState().localTeam
+    const guestTeam: TeamInterface = store.getState().guestTeam
 
     return (
         <div className="w-full flex items-center justify-between shadow-md pb-2">
