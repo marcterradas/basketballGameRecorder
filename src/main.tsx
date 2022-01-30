@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import './languages/i18n'
 import './styles/index.css'
 
-import store from './store'
+import store from './store/store'
 
 import App from './components/App'
 
