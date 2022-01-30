@@ -52,11 +52,14 @@ const guestTeam: Team = {
 
 const initialScoreState = {
     localTeam,
-    guestTeam,
+    guestTeam
 }
 
 const reducer = (state = initialScoreState, action: any) => {
     let result = {}
+
+    const localTeam: Team = { ...state.localTeam }
+    const guestTeam: Team = { ...state.guestTeam }
 
     switch (action.type) {
         case 'switchBonusStatus':
