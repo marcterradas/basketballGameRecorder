@@ -55,7 +55,7 @@ const initialScoreState = {
     guestTeam,
 }
 
-const reducer = (state = initialScoreState, action) => {
+const reducer = (state = initialScoreState, action: any) => {
     let result = {}
 
     switch (action.type) {

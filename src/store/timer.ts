@@ -4,7 +4,7 @@ const initialScoreState = {
     period: 1
 }
 
-const reducer = (state = initialScoreState, action) => {
+const reducer = (state = initialScoreState, action: any) => {
     let result = {}
 
     switch (action.type) {
