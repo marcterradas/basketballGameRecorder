@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import timer from './timer'
-import team from './team'
+import timer from './modules/timer'
+import team from './modules/team'
 
 const reducer = combineReducers({ timer, team })
 

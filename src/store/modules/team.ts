@@ -1,4 +1,4 @@
-import { Team } from './../interfaces'
+import { Team } from '../../interfaces'
 
 const localTeam: Team = {
     type: 'local',
