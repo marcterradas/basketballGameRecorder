@@ -1,4 +1,5 @@
 export interface Team {
+    id: number
     type: string
     name: string
     logo: string
@@ -11,6 +12,7 @@ export interface Team {
 }
 
 export interface Player {
+    id: number
     name: string
     dorsal: number
     points: number
@@ -22,6 +24,7 @@ export interface Player {
 }
 
 export interface Coach {
+    id: number
     name: string
     technicalFouls: number
     ejected: boolean
