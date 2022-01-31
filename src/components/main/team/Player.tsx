@@ -1,8 +1,10 @@
+import store from '../../../store/store'
+
 import { Player as PlayerInterface } from '../../../interfaces'
 
 function Player(player: PlayerInterface): JSX.Element {
     const openPopup = (): void => {
-        console.log('open popup ...')
+        store.dispatch({ type: 'selectPlayer', playerId: player.id })
     }
 
     return (
