@@ -1,8 +1,11 @@
+import store from '../../../store/store'
+
+
 import { Coach as CoachInteface } from '../../../interfaces'
 
 function Coach(coach: CoachInteface): JSX.Element {
     const openPopup = (): void => {
-        console.log('open popup ...')
+        store.dispatch({ type: 'selectCoach', coachId: coach.id })
     }
 
     return (
