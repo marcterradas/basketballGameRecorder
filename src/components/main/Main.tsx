@@ -10,7 +10,7 @@ function Main(): JSX.Element {
     const guestTeam: TeamInterface = store.getState().team.guestTeam
 
     return (
-        <div className="w-full flex items-stretch justify-between pt-4 px-6 shadow-md">
+        <div className="w-full flex items-stretch justify-between pt-4 px-6 bg-neutral-100">
             <Team {...localTeam}></Team>
             <Historic></Historic>
             <Team {...guestTeam}></Team>
