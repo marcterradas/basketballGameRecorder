@@ -18,7 +18,7 @@ function Team(team: TeamInterface): JSX.Element {
 
     return (
         <div>
-            <div className="h-72 grid grid-cols-3 gap-4 mb-10">{playingPlayers}</div>
+            <div className="h-72 grid grid-cols-3 gap-4">{playingPlayers}</div>
             <div className="h-72 grid grid-cols-4 gap-4">{bench}</div>
         </div>
     )
