@@ -112,8 +112,6 @@ const reducer = (state = initialScoreState, action: any) => {
             break
     }
 
-    console.log(result)
-
     return result
 }
 
