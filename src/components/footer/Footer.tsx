@@ -1,6 +1,7 @@
 import store from '../../store/store'
 
 import Actions from './Actions'
+import Language from './Language'
 
 import { Team as TeamInterface } from '../../interfaces'
 
