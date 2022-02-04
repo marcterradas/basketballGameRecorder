@@ -29,3 +29,8 @@ export interface Coach {
     technicalFouls: number
     ejected: boolean
 }
+
+export interface Language {
+    key: string,
+    value: string
+}
