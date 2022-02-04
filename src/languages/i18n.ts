@@ -3,10 +3,12 @@ import { initReactI18next } from 'react-i18next'
 
 import translations from './translations.json'
 
-export const languages = {
-    es: 'Castellà',
-    ca: 'Català',
-    en: 'English'
-}
+import { Language } from '../interfaces'
+
+export const languages: Language[] = [
+    { key: 'es', value: 'Castellà' },
+    { key: 'ca', value: 'Català' },
+    { key: 'en', value: 'English' }
+]
 
 i18n.use(initReactI18next).init(translations)
