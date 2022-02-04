@@ -1,6 +1,5 @@
 import store from '../../store/store'
 
-
 import { useTranslation } from 'react-i18next'
 
 import { Team as TeamInterface } from '../../interfaces'
