@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { languages } from '../../languages/i18n'
+import { languages, changeLanguage } from '../../languages/i18n'
 import { Language as LanguageInterface } from '../../interfaces'
 
 function Language(): JSX.Element {
@@ -10,19 +10,21 @@ function Language(): JSX.Element {
     for (let languageKey in languages) {
         const language: LanguageInterface = languages[languageKey]
         const languageElement: JSX.Element = (
-            <option key={language.key} value={language.value}>
+            <option key={language.key} value={language.key}>
                 {language.value}
             </option>
         )
         languageList.push(languageElement)
     }
 
-    const changeLanguage = (event: any): void => {
-        setSelectedOption(event.target.value)
+    const handleChangeLanguage = (event: any): void => {
+        const language: string = event.target.value
+        setSelectedOption(language)
+        changeLanguage(language)
     }
 
     return (
-        <select value={selectedOption} onChange={(event) => changeLanguage(event)} className="h-14 w-24 rounded-md text-l text-center cursor-pointer bg-blue-200">
+        <select value={selectedOption} onChange={(event) => handleChangeLanguage(event)} className="h-14 w-24 rounded-md text-l text-center cursor-pointer bg-blue-200">
             {languageList}
         </select>
     )
