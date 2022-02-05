@@ -7,8 +7,8 @@ import { Team as TeamInterface } from '../../interfaces'
 function Actions(team: TeamInterface): JSX.Element {
     const { t } = useTranslation()
     const containerFlexDirection: string = team.type == 'guest' ? 'flex-row-reverse' : ''
-    const bonusMargin: string = team.type == 'local' ? 'mr-8' : ''
-    const possessionMargin: string = team.type == 'guest' ? 'mr-8' : ''
+    const bonusMargin: string = team.type == 'local' ? 'mr-4' : ''
+    const possessionMargin: string = team.type == 'guest' ? 'mr-4' : ''
 
     const switchBonusStatus = (): void => {
         store.dispatch({ type: 'switchBonusStatus', team: team.type })
