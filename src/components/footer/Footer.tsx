@@ -16,7 +16,7 @@ function Footer(): JSX.Element {
                 <Actions {...localTeam}></Actions>
                 <Actions {...guestTeam}></Actions>
             </div>
-            <div className="w-1/12 flex items-center justify-between">
+            <div className="w-1/12 flex items-center justify-center">
                 <Language></Language>
             </div>
         </div>
