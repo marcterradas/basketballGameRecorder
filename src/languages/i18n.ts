@@ -7,12 +7,12 @@ import { Language } from '../interfaces'
 
 export const languages: Language[] = [
     { key: 'es', value: 'Castellà' },
-    { key: 'ca', value: 'Català' },
+    { key: 'cat', value: 'Català' },
     { key: 'en', value: 'English' }
 ]
 
 export const changeLanguage = (language: string) => {
-    console.log(language)
+    i18n.changeLanguage(language)
 }
 
 i18n.use(initReactI18next).init(translations)
