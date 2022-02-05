@@ -13,7 +13,7 @@ export const languages: Language[] = [
 
 export const changeLanguage = (language: string) => {
     i18n.changeLanguage(language)
-    localStorage.setLabel('language', language)
+    localStorage.setItem('language', language)
 }
 
 export const defaultLanguage: string | null = localStorage.getItem('language')
