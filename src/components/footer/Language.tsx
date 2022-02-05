@@ -14,7 +14,7 @@ function Language(): JSX.Element {
         languageList.push(languageElement)
     }
 
-    return <select>{languageList}</select>
+    return <select className="h-14 w-24 rounded-md text-l text-center cursor-pointer bg-blue-200">{languageList}</select>
 }
 
 export default Language
