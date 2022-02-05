@@ -11,4 +11,8 @@ export const languages: Language[] = [
     { key: 'en', value: 'English' }
 ]
 
+export const changeLanguage = (language: string) => {
+    console.log(language)
+}
+
 i18n.use(initReactI18next).init(translations)
