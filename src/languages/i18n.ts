@@ -13,6 +13,9 @@ export const languages: Language[] = [
 
 export const changeLanguage = (language: string) => {
     i18n.changeLanguage(language)
+    localStorage.setLabel('language', language)
 }
+
+export const defaultLanguage: string | null = localStorage.getItem('language')
 
 i18n.use(initReactI18next).init(translations)
