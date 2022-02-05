@@ -9,7 +9,7 @@ function Coach(coach: CoachInteface): JSX.Element {
     }
 
     return (
-        <div className="h-24 w-24 rounded-full border-2 shadow-lg flex items-center justify-center cursor-pointer select-none bg-green-100" onClick={openPopup}>
+        <div className="h-24 w-24 rounded-full border-2 shadow-lg flex items-center justify-center cursor-pointer select-none bg-green-200" onClick={openPopup}>
             {coach.name}
         </div>
     )
