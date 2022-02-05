@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-import { languages, changeLanguage } from '../../languages/i18n'
+import { languages, changeLanguage, defaultLanguage } from '../../languages/i18n'
 import { Language as LanguageInterface } from '../../interfaces'
 
 function Language(): JSX.Element {
     const languageList: Array<JSX.Element> = []
-    const [selectedOption, setSelectedOption] = useState('Català')
+    const [selectedOption, setSelectedOption] = useState(defaultLanguage ? defaultLanguage : 'en')
 
     for (let languageKey in languages) {
         const language: LanguageInterface = languages[languageKey]
