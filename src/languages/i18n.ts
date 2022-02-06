@@ -18,4 +18,6 @@ export const changeLanguage = (language: string) => {
 
 export const defaultLanguage: string | null = localStorage.getItem('language')
 
+translations.fallbackLng = defaultLanguage ? defaultLanguage : 'en'
+
 i18n.use(initReactI18next).init(translations)
