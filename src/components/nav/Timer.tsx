@@ -59,8 +59,10 @@ function Timer(): JSX.Element {
 
     return (
         <div className="w-full">
-            <div className="bold w-full text-center text-8xl pb-4 cursor-pointer select-none" onClick={clickTimer}>
-                {label}
+            <div className="bold w-full flex items-center justify-center text-center pb-4">
+                <div className="w-80 rounded-md text-8xl select-none cursor-pointer border-2 border-stone-500" onClick={clickTimer}>
+                    {label}
+                </div>
             </div>
             <div className="w-full text-center">
                 <div className="bold text-4xl select-none">{period}</div>
