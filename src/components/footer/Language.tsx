@@ -24,7 +24,7 @@ function Language(): JSX.Element {
     }
 
     return (
-        <select value={selectedOption} onChange={(event) => handleChangeLanguage(event)} className="h-14 w-32 rounded-md text-l text-center cursor-pointer border-2 border-stone-500 bg-white">
+        <select value={selectedOption} onChange={(event) => handleChangeLanguage(event)} className="h-14 w-32 rounded-md text-l text-center cursor-pointer border-2 border-stone-500 bg-white font-bold">
             {languageList}
         </select>
     )
