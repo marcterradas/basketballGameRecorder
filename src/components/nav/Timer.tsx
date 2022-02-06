@@ -5,7 +5,7 @@ import store from '../../store/store'
 
 function Timer(): JSX.Element {
     const { t } = useTranslation()
-    const startLabel: string = t('start')
+    const startLabel: string = 'start'
 
     const [start, setStart] = useState(true)
     const [minutes, setMinutes] = useState(10)
@@ -16,7 +16,7 @@ function Timer(): JSX.Element {
 
     const clickTimer = (): void => {
         const isStart: boolean = !start
-        const label: string = minutes < 10 ? t('pause') : t('start')
+        const label: string = minutes < 10 ? 'pause' : 'start'
         setStart(isStart)
         setLabel(isStart ? label : time)
     }
@@ -34,7 +34,7 @@ function Timer(): JSX.Element {
             setPeriod(newPeriod)
             setMinutes(10)
             setSeconds(0)
-            setLabel(t('start'))
+            setLabel('start')
             store.dispatch({ type: 'updatePeriod', period: newPeriod })
         }
 
@@ -60,8 +60,8 @@ function Timer(): JSX.Element {
     return (
         <div className="w-full">
             <div className="bold w-full flex items-center justify-center text-center pb-4">
-                <div className="w-80 rounded-md text-8xl select-none cursor-pointer border-2 border-stone-500" onClick={clickTimer}>
-                    {label}
+                <div className="w-auto rounded-md text-8xl select-none cursor-pointer border-2 border-stone-500" onClick={clickTimer}>
+                    {start ? t(label) : time}
                 </div>
             </div>
             <div className="w-full text-center">
