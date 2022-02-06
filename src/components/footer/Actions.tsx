@@ -20,10 +20,10 @@ function Actions(team: TeamInterface): JSX.Element {
 
     return (
         <div className={`h-full flex items-center justify-center ${containerFlexDirection}`}>
-            <div onClick={switchBonusStatus} className={`h-14 w-32 rounded-md flex items-center justify-center cursor-pointer select-none text-l border-2 border-stone-500 ${bonusMargin}`}>
+            <div onClick={switchBonusStatus} className={`h-14 w-32 rounded-md flex items-center justify-center cursor-pointer select-none text-l border-2 border-stone-500 font-bold ${bonusMargin}`}>
                 {t('bonus')}
             </div>
-            <div onClick={switchPossessionStatus} className={`h-14 w-32 rounded-md flex items-center justify-center cursor-pointer select-none text-l border-2 border-stone-500 ${possessionMargin}`}>
+            <div onClick={switchPossessionStatus} className={`h-14 w-32 rounded-md flex items-center justify-center cursor-pointer select-none text-l border-2 border-stone-500 font-bold ${possessionMargin}`}>
                 {t('possession')}
             </div>
         </div>
