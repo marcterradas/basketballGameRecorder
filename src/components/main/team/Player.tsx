@@ -8,7 +8,7 @@ function Player(player: PlayerInterface): JSX.Element {
     }
 
     return (
-        <div className="h-24 w-24 rounded-full border-2 shadow-lg flex items-center justify-center cursor-pointer select-none text-4xl bg-blue-200" onClick={openPopup}>
+        <div className="h-24 w-24 rounded-full border-2 shadow-lg flex items-center justify-center cursor-pointer select-none text-4xl border-stone-500 font-bold" onClick={openPopup}>
             {player.dorsal}
         </div>
     )
