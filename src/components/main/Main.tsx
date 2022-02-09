@@ -8,9 +8,16 @@ import { Team as TeamInterface } from '../../interfaces'
 function Main(): JSX.Element {
     const localTeam: TeamInterface = store.getState().team.localTeam
     const guestTeam: TeamInterface = store.getState().team.guestTeam
+    let showPlayerPopup: boolean = false
+    let showCoachPopup: boolean = false
+    let selectedPlayerId: number | null = null
+    let selectedCoachId: number | null = null
 
     const showPopups = (): void => {
-        console.log('handeShowPupups ...')
+        showPlayerPopup = store.getState().showPlayerPopup
+        showCoachPopup = store.getState().showCoachPopup
+        selectedPlayerId = showPlayerPopup ? store.getState().selectedPlayerId : null
+        selectedCoachId = showCoachPopup ? store.getState().selectedCoachId : null
     }
 
     store.subscribe(showPopups)
