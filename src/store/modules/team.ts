@@ -54,16 +54,12 @@ const guestTeam: Team = {
 
 const selectedPlayerId: number | null = null
 const selectedCoachId: number | null = null
-const showPlayerPopup: boolean = false
-const showCoachPopup: boolean = false
 
 const initialScoreState = {
     localTeam,
     guestTeam,
     selectedPlayerId,
     selectedCoachId,
-    showPlayerPopup,
-    showCoachPopup
 }
 
 const reducer = (state = initialScoreState, action: any) => {
@@ -94,8 +90,6 @@ const reducer = (state = initialScoreState, action: any) => {
                 ...state,
                 selectedPlayerId: action.playerId,
                 selectedCoachId: null,
-                showPlayerPopup: true,
-                showCoachPopup: false
             }
             break
         case 'selectCoach':
@@ -103,8 +97,6 @@ const reducer = (state = initialScoreState, action: any) => {
                 ...state,
                 selectedPlayerId: null,
                 selectedCoachId: action.coachId,
-                showPlayerPopup: false,
-                showCoachPopup: true
             }
             break
         default:
