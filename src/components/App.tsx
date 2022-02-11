@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import store from '../store/store'
 
 import Coach from './popup/Coach'
@@ -8,18 +10,19 @@ import Main from './main/Main'
 import Footer from './footer/Footer'
 
 function App(): JSX.Element {
-    let showPlayerPopup: boolean = false
-    let showCoachPopup: boolean = false
-    let selectedPlayerId: number | null = null
-    let selectedCoachId: number | null = null
-
-    let popup: JSX.Element = <div></div>
+    const [popup, setPopup] = useState(<div></div>)
 
     const showPopups = (): void => {
-        showPlayerPopup = store.getState().showPlayerPopup
-        showCoachPopup = store.getState().showCoachPopup
-        selectedPlayerId = showPlayerPopup ? store.getState().selectedPlayerId : null
-        selectedCoachId = showCoachPopup ? store.getState().selectedCoachId : null
+        const selectedPlayerId: number | null = store.getState().team.selectedPlayerId
+        const selectedCoachId: number | null = store.getState().team.selectedCoachId
+
+        if (selectedPlayerId) {
+            setPopup(<Player></Player>)
+        }
+
+        if (selectedCoachId) {
+            setPopup(<Coach></Coach>)
+        }
     }
 
     store.subscribe(showPopups)
