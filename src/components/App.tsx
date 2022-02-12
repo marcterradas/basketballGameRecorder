@@ -16,6 +16,8 @@ function App(): JSX.Element {
         const selectedPlayerId: number | null = store.getState().team.selectedPlayerId
         const selectedCoachId: number | null = store.getState().team.selectedCoachId
 
+        setPopup(<div></div>)
+
         if (selectedPlayerId) {
             setPopup(<Player></Player>)
         }
