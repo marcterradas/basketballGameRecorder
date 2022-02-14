@@ -10,7 +10,7 @@ function Player(): JSX.Element {
     }
 
     const addPoint = (points: number): void => {
-        console.log(points)
+        store.dispatch({ type: 'addPoints', points: points })
         closePopup()
     }
 

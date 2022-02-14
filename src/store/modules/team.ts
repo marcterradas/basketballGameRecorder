@@ -106,6 +106,10 @@ const reducer = (state = initialScoreState, action: any) => {
                 selectedCoachId: null
             }
             break
+        case 'addPoints':
+            console.log(action.points)
+            result = state
+            break
         default:
             result = state
             break
