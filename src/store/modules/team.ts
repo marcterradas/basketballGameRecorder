@@ -78,8 +78,8 @@ const getCoach = (coachId: number | null): Coach | null => {
 const reducer = (state = initialScoreState, action: any) => {
     let result = {}
 
-    const localTeam: Team = { ...state.localTeam }
-    const guestTeam: Team = { ...state.guestTeam }
+    const localTeam: Team = JSON.parse(JSON.stringify(state.localTeam))
+    const guestTeam: Team = JSON.parse(JSON.stringify(state.guestTeam))
 
     switch (action.type) {
         case 'switchBonusStatus':
@@ -121,23 +121,21 @@ const reducer = (state = initialScoreState, action: any) => {
             break
         case 'addPoints':
             for (let index in localTeam.players) {
-                const player: Player = localTeam.players[index]
+                const player: Player = { ...localTeam.players[index] }
 
                 if (player.id == state.selectedPlayerId) {
-                    // player.points += action.points
                     localTeam.score += action.points
-                    // localTeam.players[index] = player
+                    localTeam.players[index].points += action.points
                     break
                 }
             }
 
             for (let index in guestTeam.players) {
-                const player: Player = guestTeam.players[index]
+                const player: Player = { ...guestTeam.players[index] }
 
                 if (player.id == state.selectedPlayerId) {
-                    // player.points += action.points
                     guestTeam.score += action.points
-                    // guestTeam.players[index] = player
+                    guestTeam.players[index].points += action.points
                     break
                 }
             }
