@@ -1,3 +1,4 @@
+import Actions from '../../components/footer/Actions'
 import { Team, Player, Coach } from '../../interfaces'
 
 const localTeam: Team = {
@@ -62,23 +63,7 @@ const initialScoreState = {
     selectedCoachId
 }
 
-const getPlayer = (playerId: number): Player | null => {
-    for (const player of localTeam.players) {
-        if (player.id == playerId) {
-            return player
-        }
-    }
-
-    for (const player of guestTeam.players) {
-        if (player.id == playerId) {
-            return player
-        }
-    }
-
-    return null
-}
-
-const getCoach = (coachId: number): Coach | null => {
+const getCoach = (coachId: number | null): Coach | null => {
     if (localTeam.coach.id == coachId) {
         return localTeam.coach
     }
@@ -135,8 +120,34 @@ const reducer = (state = initialScoreState, action: any) => {
             }
             break
         case 'addPoints':
-            console.log(action.points)
-            result = state
+            for (let index in localTeam.players) {
+                const player: Player = localTeam.players[index]
+
+                if (player.id == state.selectedPlayerId) {
+                    // player.points += action.points
+                    localTeam.score += action.points
+                    // localTeam.players[index] = player
+                    break
+                }
+            }
+
+            for (let index in guestTeam.players) {
+                const player: Player = guestTeam.players[index]
+
+                if (player.id == state.selectedPlayerId) {
+                    // player.points += action.points
+                    guestTeam.score += action.points
+                    // guestTeam.players[index] = player
+                    break
+                }
+            }
+
+            result = {
+                ...state,
+                localTeam: localTeam,
+                guestTeam: guestTeam
+            }
+
             break
         default:
             result = state
