@@ -1,4 +1,4 @@
-import { Team, Player } from '../../interfaces'
+import { Team, Player, Coach } from '../../interfaces'
 
 const localTeam: Team = {
     id: 1,
@@ -60,6 +60,34 @@ const initialScoreState = {
     guestTeam,
     selectedPlayerId,
     selectedCoachId
+}
+
+const getPlayer = (playerId: number): Player | null => {
+    for (const player of localTeam.players) {
+        if (player.id == playerId) {
+            return player
+        }
+    }
+
+    for (const player of guestTeam.players) {
+        if (player.id == playerId) {
+            return player
+        }
+    }
+
+    return null
+}
+
+const getCoach = (coachId: number): Coach | null => {
+    if (localTeam.coach.id == coachId) {
+        return localTeam.coach
+    }
+
+    if (guestTeam.coach.id == coachId) {
+        return guestTeam.coach
+    }
+
+    return null
 }
 
 const reducer = (state = initialScoreState, action: any) => {
