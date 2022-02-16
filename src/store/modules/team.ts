@@ -1,4 +1,4 @@
-import { Team, Player, Coach } from '../../interfaces'
+import { Team, Player, Coach, Historic } from '../../interfaces'
 
 const localTeam: Team = {
     id: 1,
@@ -52,6 +52,8 @@ const guestTeam: Team = {
     coach: { id: 2, name: 'CoachB', technicalFouls: 0, ejected: false }
 }
 
+const historic: Array<Historic> = []
+
 const selectedPlayerId: number | null = null
 const selectedCoachId: number | null = null
 
@@ -59,7 +61,8 @@ const initialScoreState = {
     localTeam,
     guestTeam,
     selectedPlayerId,
-    selectedCoachId
+    selectedCoachId,
+    historic
 }
 
 const getCoach = (coachId: number | null): Coach | null => {
