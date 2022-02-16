@@ -1,4 +1,3 @@
-import Actions from '../../components/footer/Actions'
 import { Team, Player, Coach } from '../../interfaces'
 
 const localTeam: Team = {
