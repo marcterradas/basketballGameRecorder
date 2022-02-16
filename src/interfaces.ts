@@ -31,6 +31,13 @@ export interface Coach {
 }
 
 export interface Language {
-    key: string,
+    key: string
     value: string
+}
+
+export interface Historic {
+    teamId: string
+    playerId: string
+    time: string
+    points: number | null
 }
