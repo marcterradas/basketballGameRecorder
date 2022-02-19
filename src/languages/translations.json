@@ -8,7 +8,10 @@
                 "fouls": "Fouls",
                 "period": "Period",
                 "start": "Start",
-                "pause": "Pause"
+                "pause": "Pause",
+                "add_one_point": "+1 point",
+                "add_two_points": "+2 points",
+                "add_three_points": "+3 points"
             }
         },
         "es": {
@@ -19,7 +22,10 @@
                 "fouls": "Faltas",
                 "period": "Periodo",
                 "start": "Empezar",
-                "pause": "Pausa"
+                "pause": "Pausa",
+                "add_one_point": "+1 punto",
+                "add_two_points": "+2 puntos",
+                "add_three_points": "+3 puntos"
             }
         },
         "cat": {
@@ -30,7 +36,10 @@
                 "fouls": "Faltas",
                 "period": "Període",
                 "start": "Començar",
-                "pause": "Pausa"
+                "pause": "Pausa",
+                "add_one_point": "+1 punt",
+                "add_two_points": "+2 punts",
+                "add_three_points": "+3 punts"
             }
         }
     }

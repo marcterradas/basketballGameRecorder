@@ -1,6 +1,10 @@
 import store from '../../store/store'
 
+import { useTranslation } from 'react-i18next'
+
 function Player(): JSX.Element {
+    const { t } = useTranslation()
+
     const styles: object = {
         backgroundImage: "url('/src/images/close.png')"
     }
@@ -19,13 +23,13 @@ function Player(): JSX.Element {
             <div onClick={closePopup} className="absolute top-4 right-4 cursor-pointer w-12 h-12 bg-contain bg-no-repeat bg-center" style={styles}></div>
             <div className="z-3">
                 <div onClick={() => addPoint(1)} className="cursor-pointer">
-                    Add one point
+                    {t('add_one_point')}
                 </div>
                 <div onClick={() => addPoint(2)} className="cursor-pointer">
-                    Add two points
+                    {t('add_two_points')}
                 </div>
                 <div onClick={() => addPoint(3)} className="cursor-pointer">
-                    Add three points
+                    {t('add_three_points')}
                 </div>
             </div>
         </div>
