@@ -36,8 +36,8 @@ export interface Language {
 }
 
 export interface Historic {
-    teamId: string
-    playerId: string
+    teamId: number
+    playerId: number
     time: string
     points: number | null
 }
