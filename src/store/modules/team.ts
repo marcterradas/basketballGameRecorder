@@ -2,8 +2,6 @@ import { Team, Player, Coach, Historic } from '../../interfaces'
 
 import { localTeam, guestTeam } from '../mokupdata'
 
-const historic: Array<Historic> = []
-
 const selectedPlayerId: number | null = null
 const selectedCoachId: number | null = null
 
@@ -12,7 +10,6 @@ const initialScoreState = {
     guestTeam,
     selectedPlayerId,
     selectedCoachId,
-    historic
 }
 
 const reducer = (state = initialScoreState, action: any) => {
@@ -76,6 +73,12 @@ const reducer = (state = initialScoreState, action: any) => {
                 if (player.id == state.selectedPlayerId) {
                     guestTeam.score += action.points
                     guestTeam.players[index].points += action.points
+                    const newHistoric: Historic = {
+                        teamId: guestTeam.id,
+                        playerId: player.id,
+                        time: '',
+                        points: action.points
+                    }
                     break
                 }
             }
