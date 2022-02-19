@@ -15,18 +15,6 @@ const initialScoreState = {
     historic
 }
 
-const getCoach = (coachId: number | null): Coach | null => {
-    if (localTeam.coach.id == coachId) {
-        return localTeam.coach
-    }
-
-    if (guestTeam.coach.id == coachId) {
-        return guestTeam.coach
-    }
-
-    return null
-}
-
 const reducer = (state = initialScoreState, action: any) => {
     let result = {}
 
