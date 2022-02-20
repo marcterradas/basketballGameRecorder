@@ -1,4 +1,4 @@
-import { Team, Player, Coach, Historic } from '../../interfaces'
+import { Team, Player } from '../../interfaces'
 
 import { localTeam, guestTeam } from '../mokupdata'
 
@@ -73,12 +73,6 @@ const reducer = (state = initialScoreState, action: any) => {
                 if (player.id == state.selectedPlayerId) {
                     guestTeam.score += action.points
                     guestTeam.players[index].points += action.points
-                    const newHistoric: Historic = {
-                        teamId: guestTeam.id,
-                        playerId: player.id,
-                        time: '',
-                        points: action.points
-                    }
                     break
                 }
             }
