@@ -1,15 +1,17 @@
-import { Team, Player } from '../../interfaces'
+import { Team, Player, Historic } from '../../interfaces'
 
 import { localTeam, guestTeam } from '../mokupdata'
 
 const selectedPlayerId: number | null = null
 const selectedCoachId: number | null = null
+const historic: Array<Historic> = []
 
 const initialScoreState = {
     localTeam,
     guestTeam,
     selectedPlayerId,
-    selectedCoachId
+    selectedCoachId,
+    historic
 }
 
 const reducer = (state = initialScoreState, action: any) => {
