@@ -7,7 +7,7 @@ export interface Team {
     bonus: boolean
     possession: boolean
     fouls: boolean
-    players: Array<Player>
+    players: object
     coach: Coach
 }
 

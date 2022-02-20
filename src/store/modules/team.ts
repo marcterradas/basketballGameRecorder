@@ -9,7 +9,7 @@ const initialScoreState = {
     localTeam,
     guestTeam,
     selectedPlayerId,
-    selectedCoachId,
+    selectedCoachId
 }
 
 const reducer = (state = initialScoreState, action: any) => {
@@ -57,24 +57,12 @@ const reducer = (state = initialScoreState, action: any) => {
             }
             break
         case 'addPoints':
-            for (let index in localTeam.players) {
-                const player: Player = { ...localTeam.players[index] }
-
-                if (player.id == state.selectedPlayerId) {
-                    localTeam.score += action.points
-                    localTeam.players[index].points += action.points
-                    break
-                }
-            }
-
-            for (let index in guestTeam.players) {
-                const player: Player = { ...guestTeam.players[index] }
-
-                if (player.id == state.selectedPlayerId) {
-                    guestTeam.score += action.points
-                    guestTeam.players[index].points += action.points
-                    break
-                }
+            if (localTeam.players[state.selectedPlayerId] !== 'undefined') {
+                localTeam.score += action.points
+                localTeam.players[state.selectedPlayerId].points += action.points
+            } else {
+                guestTeam.score += action.points
+                guestTeam.players[state.selectedPlayerId].points += action.points
             }
 
             result = {
