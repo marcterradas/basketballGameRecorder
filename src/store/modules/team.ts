@@ -4,6 +4,9 @@ import { localTeam, guestTeam } from '../mokupdata'
 
 const selectedPlayerId: number | null = null
 const selectedCoachId: number | null = null
+const renderPlayerPopup: boolean = false
+const renderCoachPopup: boolean = false
+const removePopup: boolean = false
 const historic: Array<Historic> = []
 
 const initialScoreState = {
@@ -11,6 +14,9 @@ const initialScoreState = {
     guestTeam,
     selectedPlayerId,
     selectedCoachId,
+    renderPlayerPopup,
+    renderCoachPopup,
+    removePopup,
     historic
 }
 
@@ -41,21 +47,24 @@ const reducer = (state = initialScoreState, action: any) => {
             result = {
                 ...state,
                 selectedPlayerId: action.playerId,
-                selectedCoachId: null
+                selectedCoachId: null,
+                renderPlayerPopup: true
             }
             break
         case 'selectCoach':
             result = {
                 ...state,
                 selectedPlayerId: null,
-                selectedCoachId: action.coachId
+                selectedCoachId: action.coachId,
+                renderCoachPopup: true
             }
             break
         case 'closePopup':
             result = {
                 ...state,
                 selectedPlayerId: null,
-                selectedCoachId: null
+                selectedCoachId: null,
+                removePopup: true
             }
             break
         case 'addPoints':
@@ -74,6 +83,28 @@ const reducer = (state = initialScoreState, action: any) => {
             }
 
             break
+
+        case 'renderPlayerPopup':
+            result = {
+                ...state,
+                renderPlayerPopup: false,
+            }
+            break
+
+        case 'renderCoachPopup':
+            result = {
+                ...state,
+                renderCoachPopup: false,
+            }
+            break
+
+        case 'updateRemovePopup':
+            result = {
+                ...state,
+                removePopup: false
+            }
+            break
+
         default:
             result = state
             break

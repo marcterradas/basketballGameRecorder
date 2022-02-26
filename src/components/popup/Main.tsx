@@ -9,17 +9,23 @@ function Main(): JSX.Element {
     const [popup, setPopup] = useState(<div></div>)
 
     const showPopups = (): void => {
-        const selectedPlayerId: number | null = store.getState().team.selectedPlayerId
-        const selectedCoachId: number | null = store.getState().team.selectedCoachId
+        const renderPlayerPopup = store.getState().team.renderPlayerPopup
+        const renderCoachPopup = store.getState().team.renderCoachPopup
+        const removePopup = store.getState().team.removePopup
 
-        setPopup(<div></div>)
-
-        if (selectedPlayerId) {
-            setPopup(<Player></Player>)
+        if (removePopup) {
+            setPopup(<div></div>)
+            store.dispatch({ type: 'updateRemovePopup' })
         }
 
-        if (selectedCoachId) {
+        if (renderPlayerPopup) {
+            setPopup(<Player></Player>)
+            store.dispatch({ type: 'renderPlayerPopup' })
+        }
+
+        if (renderCoachPopup) {
             setPopup(<Coach></Coach>)
+            store.dispatch({ type: 'renderCoachPopup' })
         }
     }
 
