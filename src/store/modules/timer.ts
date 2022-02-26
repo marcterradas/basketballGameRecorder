@@ -2,7 +2,7 @@ const initialScoreState = {
     minutes: 10,
     seconds: 0,
     period: 1,
-    inGame: false
+    isPaused: true
 }
 
 const reducer = (state = initialScoreState, action: any) => {
@@ -22,10 +22,10 @@ const reducer = (state = initialScoreState, action: any) => {
                 period: action.period
             }
             break
-        case 'setInGame':
+        case 'setIsPaused':
             result = {
                 ...state,
-                period: action.inGame
+                period: action.isPaused
             }
         default:
             result = state
