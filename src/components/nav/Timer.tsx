@@ -49,8 +49,8 @@ function Timer(): JSX.Element {
 
     const updateTimer = (): (() => void) | void => {
         if (!start) {
-            // every second, update time
-            const interval: number = setInterval(updateTime, 1000)
+            const oneSecond = 1000
+            const interval: number = setInterval(updateTime, oneSecond)
             return (): void => clearInterval(interval)
         }
     }
