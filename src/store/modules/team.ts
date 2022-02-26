@@ -31,29 +31,22 @@ const reducer = (state = initialScoreState, action: any) => {
             action.team == 'local' ? (localTeam.bonus = !localTeam.bonus) : (guestTeam.bonus = !guestTeam.bonus)
             result = { ...state, localTeam: localTeam, guestTeam: guestTeam }
             break
+
         case 'switchPossessionStatus':
             action.team == 'local' ? (localTeam.possession = !localTeam.possession) : (guestTeam.possession = !guestTeam.possession)
             result = { ...state, localTeam: localTeam, guestTeam: guestTeam }
             break
+
         case 'selectPlayer':
             result = { ...state, selectedPlayerId: action.playerId, selectedCoachId: null, renderPlayerPopup: true }
             break
+
         case 'selectCoach':
             result = { ...state, selectedPlayerId: null, selectedCoachId: action.coachId, renderCoachPopup: true }
             break
+
         case 'closePopup':
             result = { ...state, selectedPlayerId: null, selectedCoachId: null, removePopup: true }
-            break
-        case 'addPoints':
-            if (localTeam.players[state.selectedPlayerId] !== 'undefined') {
-                localTeam.score += action.points
-                localTeam.players[state.selectedPlayerId].points += action.points
-            } else {
-                guestTeam.score += action.points
-                guestTeam.players[state.selectedPlayerId].points += action.points
-            }
-
-            result = { ...state, localTeam: localTeam, guestTeam: guestTeam }
             break
 
         case 'renderPlayerPopup':
@@ -66,6 +59,17 @@ const reducer = (state = initialScoreState, action: any) => {
 
         case 'updateRemovePopup':
             result = { ...state, removePopup: false }
+            break
+
+        case 'addPoints':
+            if (localTeam.players[state.selectedPlayerId] !== 'undefined') {
+                localTeam.score += action.points
+                localTeam.players[state.selectedPlayerId].points += action.points
+            } else {
+                guestTeam.score += action.points
+                guestTeam.players[state.selectedPlayerId].points += action.points
+            }
+            result = { ...state, localTeam: localTeam, guestTeam: guestTeam }
             break
 
         default:
