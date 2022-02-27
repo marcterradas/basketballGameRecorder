@@ -34,7 +34,7 @@ function Main(): JSX.Element {
 
     const unsubscribe = store.subscribe(showPopups)
 
-    return <div>{popup}</div>
+    return <>{popup}</>
 }
 
 export default Main
