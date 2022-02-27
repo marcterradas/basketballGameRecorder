@@ -2,7 +2,9 @@ import store from '../../store/store'
 
 import { useTranslation } from 'react-i18next'
 
-function Player(): JSX.Element {
+function Player(countDown: boolean): JSX.Element {
+    console.log(countDown)
+
     const { t } = useTranslation()
 
     const styles: object = {

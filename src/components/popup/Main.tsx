@@ -9,9 +9,10 @@ function Main(): JSX.Element {
     const [popup, setPopup] = useState(<div></div>)
 
     const showPopups = (): void => {
-        const renderPlayerPopup = store.getState().team.renderPlayerPopup
-        const renderCoachPopup = store.getState().team.renderCoachPopup
-        const removePopup = store.getState().team.removePopup
+        const renderPlayerPopup: boolean = store.getState().team.renderPlayerPopup
+        const renderCoachPopup: boolean = store.getState().team.renderCoachPopup
+        const removePopup: boolean = store.getState().team.removePopup
+        const countDown: boolean = store.getState().timer.countDown
 
         if (removePopup) {
             setPopup(<div></div>)
@@ -20,7 +21,7 @@ function Main(): JSX.Element {
         }
 
         if (renderPlayerPopup) {
-            setPopup(<Player></Player>)
+            setPopup(<Player countDown={countDown} ></Player>)
             store.dispatch({ type: 'renderPlayerPopup' })
             unsubscribe()
         }

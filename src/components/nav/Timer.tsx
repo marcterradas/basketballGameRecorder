@@ -19,7 +19,7 @@ function Timer(): JSX.Element {
         const label: string = minutes < 10 ? 'pause' : 'start'
         setStart(isStart)
         setLabel(isStart ? label : time)
-        store.dispatch({ type: 'updateIsStart', isStart: isStart })
+        store.dispatch({ type: 'isInCountDown', countDown: !isStart })
     }
 
     const updateTime = (): void => {
