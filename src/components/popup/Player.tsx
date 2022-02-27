@@ -2,8 +2,8 @@ import store from '../../store/store'
 
 import { useTranslation } from 'react-i18next'
 
-function Player(countDown: boolean): JSX.Element {
-    console.log(countDown)
+function Player(inCountDown: boolean): JSX.Element {
+    console.log(inCountDown)
 
     const { t } = useTranslation()
 

@@ -2,7 +2,7 @@ const initialScoreState = {
     minutes: 10,
     seconds: 0,
     period: 1,
-    countDown: false
+    inCountDown: false
 }
 
 const reducer = (state = initialScoreState, action: any) => {
@@ -25,7 +25,7 @@ const reducer = (state = initialScoreState, action: any) => {
         case 'isInCountDown':
             result = {
                 ...state,
-                countDown: action.countDown
+                inCountDown: action.inCountDown
             }
             break
         default:
