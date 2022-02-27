@@ -16,22 +16,25 @@ function Main(): JSX.Element {
         if (removePopup) {
             setPopup(<div></div>)
             store.dispatch({ type: 'updateRemovePopup' })
+            unsubscribe()
         }
 
         if (renderPlayerPopup) {
             setPopup(<Player></Player>)
             store.dispatch({ type: 'renderPlayerPopup' })
+            unsubscribe()
         }
 
         if (renderCoachPopup) {
             setPopup(<Coach></Coach>)
             store.dispatch({ type: 'renderCoachPopup' })
+            unsubscribe()
         }
     }
 
-    store.subscribe(showPopups)
+    const unsubscribe = store.subscribe(showPopups)
 
-    return <>{popup}</>
+    return <div>{popup}</div>
 }
 
 export default Main

@@ -19,13 +19,34 @@ function Team(teamProps: TeamInterface): JSX.Element {
 
     const getTeam = (): void => {
         team = team.type == 'local' ? store.getState().team.localTeam : store.getState().team.guestTeam
-        setScore(team.score.toString().padStart(2, '0'))
-        setBonusClass(team.bonus ? 'bg-green-600' : 'bg-red-600')
-        setPossessionClass(team.possession ? 'bg-green-600' : 'bg-red-600')
-        setFoulsClass(team.fouls ? 'bg-green-600' : 'bg-red-600')
+
+        const newScoreValue: string = team.score.toString().padStart(2, '0')
+        const newBonusValue: string = team.bonus ? 'bg-green-600' : 'bg-red-600'
+        const newPossessionValue: string = team.possession ? 'bg-green-600' : 'bg-red-600'
+        const newFoulsValue: string = team.fouls ? 'bg-green-600' : 'bg-red-600'
+
+        if (score != newScoreValue) {
+            setScore(newScoreValue)
+            unsubscribe()
+        }
+
+        if (bonusClass != newBonusValue) {
+            setBonusClass(team.bonus ? 'bg-green-600' : 'bg-red-600')
+            unsubscribe()
+        }
+
+        if (possessionClass != newPossessionValue) {
+            setPossessionClass(team.possession ? 'bg-green-600' : 'bg-red-600')
+            unsubscribe()
+        }
+
+        if (foulsClass != newFoulsValue) {
+            setFoulsClass(team.fouls ? 'bg-green-600' : 'bg-red-600')
+            unsubscribe()
+        }
     }
 
-    store.subscribe(getTeam)
+    const unsubscribe = store.subscribe(getTeam)
 
     return (
         <div className={`flex ${containerFlexDirection}`}>
