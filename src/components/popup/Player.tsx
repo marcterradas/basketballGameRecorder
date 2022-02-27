@@ -2,9 +2,7 @@ import store from '../../store/store'
 
 import { useTranslation } from 'react-i18next'
 
-function Player(inCountDown: boolean): JSX.Element {
-    console.log(inCountDown)
-
+function Player(props: any): JSX.Element {
     const { t } = useTranslation()
 
     const styles: object = {
@@ -16,7 +14,9 @@ function Player(inCountDown: boolean): JSX.Element {
     }
 
     const addPoint = (points: number): void => {
-        store.dispatch({ type: 'addPoints', points: points })
+        if (props.inCountDown) {
+            store.dispatch({ type: 'addPoints', points: points })
+        }
         closePopup()
     }
 
