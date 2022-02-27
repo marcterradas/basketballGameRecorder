@@ -22,11 +22,12 @@ const reducer = (state = initialScoreState, action: any) => {
                 period: action.period
             }
             break
-        case 'isStart':
+        case 'updateIsStart':
             result = {
                 ...state,
                 isStart: action.isStart
             }
+            break
         default:
             result = state
             break
