@@ -30,7 +30,7 @@ function Historic(): JSX.Element {
 
     const unsubscribe = store.subscribe(printHistoric)
 
-    return <div className="grow">{historicElements}</div>
+    return <div className="grow px-8">{historicElements}</div>
 }
 
 export default Historic
