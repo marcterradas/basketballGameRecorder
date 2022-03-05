@@ -74,7 +74,7 @@ const reducer = (state = initialScoreState, action: any) => {
 
         case 'addHistoric':
             const historic: Array<Historic> = JSON.parse(JSON.stringify(state.historic))
-            const teamId: number = localTeam.players[state.selectedPlayerId] !== 'undefined' ? localTeam.id : guestTeam.id
+            const teamId: number = typeof localTeam.players[state.selectedPlayerId] !== 'undefined' ? localTeam.id : guestTeam.id
             const historicElement: Historic = {
                 teamId: teamId,
                 playerId: state.selectedPlayerId,
