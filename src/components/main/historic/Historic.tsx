@@ -17,7 +17,6 @@ function Historic(): JSX.Element {
             let index: number = 0
 
             for (index; index < newHistoric.length; index++) {
-                console.log(index)
                 const historicValue: HistoricInterface = newHistoric[index]
                 const element: HistoricInterface = <HistoricElement key={index} {...historicValue}></HistoricElement>
                 newHistoricElements.push(element)
