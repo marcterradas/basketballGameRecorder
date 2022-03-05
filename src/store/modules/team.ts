@@ -62,7 +62,7 @@ const reducer = (state = initialScoreState, action: any) => {
             break
 
         case 'addPoints':
-            if (localTeam.players[state.selectedPlayerId] !== 'undefined') {
+            if (typeof localTeam.players[state.selectedPlayerId] !== 'undefined') {
                 localTeam.score += action.points
                 localTeam.players[state.selectedPlayerId].points += action.points
             } else {
