@@ -16,6 +16,15 @@ function Player(props: any): JSX.Element {
     const addPoint = (points: number): void => {
         if (props.inCountDown) {
             store.dispatch({ type: 'addPoints', points: points })
+
+            const minutes: number = store.getState().timer.minutes
+            const seconds: number = store.getState().timer.seconds
+            const minutesStr: string = minutes.toString().padStart(2, '0')
+            const secondsStr: string = seconds.toString().padStart(2, '0')
+            const timeStr: string = `${minutesStr}:${secondsStr}`
+
+            store.dispatch({ type: 'addHistoric', time: timeStr, points: points })
+
             closePopup()
         }
     }
