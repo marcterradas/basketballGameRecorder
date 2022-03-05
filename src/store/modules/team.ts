@@ -78,7 +78,7 @@ const reducer = (state = initialScoreState, action: any) => {
             const historicElement: Historic = {
                 teamId: teamId,
                 playerId: state.selectedPlayerId,
-                time: action.type,
+                time: action.time,
                 points: action.points
             }
             historic.push(historicElement)
