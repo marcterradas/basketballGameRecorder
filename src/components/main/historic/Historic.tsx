@@ -3,19 +3,27 @@ import { useState } from 'react'
 import store from '../../../store/store'
 import { Historic as HistoricInterface } from '../../../interfaces'
 
+import HistoricElement from './HistoricElement'
+
 function Historic(): JSX.Element {
     const [historic, setHistoric] = useState([])
+    const [historicElements, setHistoricElements] = useState([])
 
     const printHistoric = (): void => {
         const newHistoric: Array<HistoricInterface> = store.getState().team.historic
+        const newHistoricElements: Array<JSX.Element> = []
 
         if (historic.length != newHistoric.length) {
             let index: number = 0
 
-            for (index; index <= newHistoric.length; index++) {
-                const historicElement: HistoricInterface = newHistoric[index]
+            for (index; index < newHistoric.length; index++) {
+                console.log(index)
+                const historicValue: HistoricInterface = newHistoric[index]
+                const element: HistoricInterface = <HistoricElement key={index} {...historicValue}></HistoricElement>
+                newHistoricElements.push(element)
             }
 
+            setHistoricElements(newHistoricElements)
             setHistoric(newHistoric)
             unsubscribe()
         }
@@ -23,7 +31,7 @@ function Historic(): JSX.Element {
 
     const unsubscribe = store.subscribe(printHistoric)
 
-    return <div className="grow flex items-start justify-center"></div>
+    return <div className="grow flex items-start justify-center">{historicElements}</div>
 }
 
 export default Historic
