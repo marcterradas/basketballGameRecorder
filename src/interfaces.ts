@@ -39,5 +39,6 @@ export interface Historic {
     teamId: number
     playerId: number
     time: string
-    points: number | null
+    points: number | null,
+    score: string
 }

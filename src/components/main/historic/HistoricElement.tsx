@@ -34,7 +34,7 @@ function HistoricElement(historic: any): JSX.Element {
                 <div>{player.name}</div>
                 <div className={`font-bold ${pointsMargin}`}>({pointsStr})</div>
             </div>
-            <div className="flex flex-1 items-center justify-center">score ...</div>
+            <div className="flex flex-1 items-center justify-center font-bold">{historic.score}</div>
             <div className="flex flex-1 items-center justify-center">{historic.time}</div>
         </div>
     )
