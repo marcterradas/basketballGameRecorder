@@ -28,10 +28,14 @@ function HistoricElement(historic: any): JSX.Element {
     }
 
     return (
-        <div className={`w-full p-4 rounded-lg flex ${flexDirection} items-center border-2 border-gray-400 mb-4 `}>
-            <div className={`h-8 w-8 flex items-center justify-center rounded-full border-2 border-stone-500 ${dorsalMargin}`}>{player.dorsal}</div>
-            <div>{player.name}</div>
-            <div className={`font-bold ${pointsMargin}`}>({pointsStr})</div>
+        <div className={`w-full p-4 rounded-lg flex ${flexDirection} items-center justify-center border-2 border-gray-400 mb-4 `}>
+            <div className={`flex flex-1 ${flexDirection} items-center`}>
+                <div className={`h-8 w-8 flex items-center justify-center rounded-full border-2 border-stone-500 ${dorsalMargin}`}>{player.dorsal}</div>
+                <div>{player.name}</div>
+                <div className={`font-bold ${pointsMargin}`}>({pointsStr})</div>
+            </div>
+            <div className="flex flex-1 items-center justify-center">score ...</div>
+            <div className="flex flex-1 items-center justify-center">{historic.time}</div>
         </div>
     )
 }
