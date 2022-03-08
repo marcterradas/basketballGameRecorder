@@ -30,7 +30,7 @@ function Historic(): JSX.Element {
 
     const unsubscribe = store.subscribe(printHistoric)
 
-    return <div className="grow px-8">{historicElements}</div>
+    return <div className="grow px-8 h-144 overflow-auto">{historicElements}</div>
 }
 
 export default Historic
