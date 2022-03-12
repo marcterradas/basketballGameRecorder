@@ -27,8 +27,17 @@ function HistoricElement(historic: any): JSX.Element {
             break
     }
 
+    const removeHistoricElement = (): void => {
+        console.log('remove element ...')
+    }
+
+    const closeButtonStyles: object = {
+        backgroundImage: "url('/src/images/close.png')"
+    }
+
     return (
-        <div className={`w-full p-4 rounded-lg flex ${flexDirection} items-center justify-center border-2 border-gray-400 mb-4 `}>
+        <div className={`w-full p-4 rounded-lg relative flex ${flexDirection} items-center justify-center border-2 border-gray-400 mt-2 `}>
+            <div onClick={removeHistoricElement} className="absolute -top-2 -right-2 cursor-pointer w-8 h-8 bg-contain bg-no-repeat bg-center curosr-pointer" style={closeButtonStyles}></div>
             <div className={`flex flex-1 ${flexDirection} items-center`}>
                 <div className={`h-8 w-8 flex items-center justify-center rounded-full border-2 border-stone-500 ${dorsalMargin}`}>{player.dorsal}</div>
                 <div>{player.name}</div>
