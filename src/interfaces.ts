@@ -36,6 +36,7 @@ export interface Language {
 }
 
 export interface Historic {
+    index: number | null,
     teamId: number
     playerId: number
     time: string
