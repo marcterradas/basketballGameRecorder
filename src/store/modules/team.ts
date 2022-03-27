@@ -26,6 +26,7 @@ const reducer = (state = initialScoreState, action: any) => {
 
     const localTeam: Team = JSON.parse(JSON.stringify(state.localTeam))
     const guestTeam: Team = JSON.parse(JSON.stringify(state.guestTeam))
+    let historicElement = {}
 
     switch (action.type) {
         case 'switchBonusStatus':
@@ -78,7 +79,7 @@ const reducer = (state = initialScoreState, action: any) => {
             const teamId: number = typeof localTeam.players[state.selectedPlayerId] !== 'undefined' ? localTeam.id : guestTeam.id
             const localTeamScore: string = localTeam.score.toString().padStart(2, '0')
             const guestTeamScore: string = guestTeam.score.toString().padStart(2, '0')
-            const historicElement: Historic = {
+            historicElement = {
                 teamId: teamId,
                 playerId: state.selectedPlayerId,
                 time: action.time,
@@ -88,19 +89,21 @@ const reducer = (state = initialScoreState, action: any) => {
 
             historic.push(historicElement)
 
-            result = {
-                ...state,
-                historic: historic
-            }
+            result = { ...state, historic: historic }
             break
 
         case 'removeHistoric':
             historic = JSON.parse(JSON.stringify(state.historic))
-            historic.splice(action.index, 1)
-            result = {
-                ...state,
-                historic: historic
+            historicElement = historic[action.index]
+
+            if (localTeam.id == historicElement.teamId) {
+                localTeam.score -= historicElement.points
+            } else {
+                guestTeam.score -= historicElement.points
             }
+
+            historic.splice(action.index, 1)
+            result = { ...state, historic: historic, localTeam: localTeam, guestTeam: guestTeam }
 
             break
 
