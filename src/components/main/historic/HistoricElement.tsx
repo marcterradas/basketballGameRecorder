@@ -28,7 +28,7 @@ function HistoricElement(historic: any): JSX.Element {
     }
 
     const removeHistoricElement = (): void => {
-        console.log('remove element ...')
+        store.dispatch({ type: 'removeHistoric', index: historic.index });
     }
 
     const closeButtonStyles: object = {
