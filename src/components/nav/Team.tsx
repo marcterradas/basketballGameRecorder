@@ -8,7 +8,7 @@ function Team(teamProps: TeamInterface): JSX.Element {
     const { t } = useTranslation()
 
     let team: TeamInterface = { ...teamProps }
-    const logo: string = `/src/images/${team.logo}`
+    const logo: string = `/public/images/${team.logo}`
     const logoStyles: object = { backgroundImage: `url('${logo}')` }
     const containerFlexDirection: string = team.type == 'guest' ? 'flex-row-reverse' : ''
 
