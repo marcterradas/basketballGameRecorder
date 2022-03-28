@@ -7,3 +7,15 @@
 html, body, #root {
     height: 100%;
 }
+
+.local {
+    background-image: url('/public/images/celtics.svg');
+}
+
+.guest {
+    background-image: url('/public/images/lakers.svg');
+}
+
+.close {
+    background-image: url('/public/images/close.png');
+}

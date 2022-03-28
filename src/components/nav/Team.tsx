@@ -8,8 +8,6 @@ function Team(teamProps: TeamInterface): JSX.Element {
     const { t } = useTranslation()
 
     let team: TeamInterface = { ...teamProps }
-    const logo: string = `/public/images/${team.logo}`
-    const logoStyles: object = { backgroundImage: `url('${logo}')` }
     const containerFlexDirection: string = team.type == 'guest' ? 'flex-row-reverse' : ''
 
     const [score, setScore] = useState(team.score.toString().padStart(2, '0'))
@@ -51,7 +49,7 @@ function Team(teamProps: TeamInterface): JSX.Element {
     return (
         <div className={`flex ${containerFlexDirection}`}>
             <div>
-                <div className="h-40 w-40 bg-contain bg-no-repeat bg-center" style={logoStyles}></div>
+                <div className={`h-40 w-40 bg-contain bg-no-repeat bg-center ${team.type}`}></div>
                 <div className="text-center select-none">{team.name}</div>
             </div>
             <div className="bold h-40 w-60 flex items-center justify-center text-center text-6xl select-none">{score}</div>
